@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import Buttons from "./Buttons";
+=======
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
 
 export default function HabitCard({ habit, onToggle, onDelete }) {
   const today = new Date().toISOString().split("T")[0];
@@ -31,6 +34,7 @@ export default function HabitCard({ habit, onToggle, onDelete }) {
 
         <div className="flex gap-2 items-center">
           {/* 6. Green when today completed */}
+<<<<<<< HEAD
           <Buttons
             onClick={() => onToggle(habit.id)}
             variant={isCompleted ? "primary" : "neutral"}
@@ -42,6 +46,24 @@ export default function HabitCard({ habit, onToggle, onDelete }) {
           <Buttons onClick={() => onDelete(habit.id)} variant="danger">
             Delete
           </Buttons>
+=======
+          <button
+            onClick={() => onToggle(habit.id)}
+            className={`px-3 py-1 rounded text-white ${
+              isCompleted ? "bg-green-600" : "bg-gray-400"
+            }`}
+          >
+            {isCompleted ? "✓ Done" : "Tick"}
+          </button>
+
+          {/* 5. Delete */}
+          <button
+            onClick={() => onDelete(habit.id)}
+            className="text-red-400 text-sm hover:text-red-600"
+          >
+            Delete
+          </button>
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
         </div>
       </div>
 

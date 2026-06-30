@@ -1,6 +1,9 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
+<<<<<<< HEAD
 import Buttons from "../components/Buttons";
+=======
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
 
 export default function HabitDetailPage() {
   const { id } = useParams();
@@ -36,6 +39,7 @@ export default function HabitDetailPage() {
 
         <p className="mb-4">🔥 Streak: {habit.streak ?? 0} days</p>
 
+<<<<<<< HEAD
         <Buttons
           onClick={() => toggleToday(habit.id)}
           variant={isCompleted ? "primary" : "neutral"}
@@ -43,6 +47,16 @@ export default function HabitDetailPage() {
         >
           {isCompleted ? "✓ Done today" : "Mark today done"}
         </Buttons>
+=======
+        <button
+          onClick={() => toggleToday(habit.id)}
+          className={`px-4 py-2 rounded text-white mb-5 ${
+            isCompleted ? "bg-green-600" : "bg-gray-400"
+          }`}
+        >
+          {isCompleted ? "✓ Done today" : "Mark today done"}
+        </button>
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
 
         <h2 className="font-semibold mb-2">Completion history</h2>
         {sortedCompletions.length === 0 ? (
@@ -55,16 +69,27 @@ export default function HabitDetailPage() {
           </ul>
         )}
 
+<<<<<<< HEAD
         <Buttons
+=======
+        <button
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
           onClick={() => {
             deleteHabit(habit.id);
             navigate("/");
           }}
+<<<<<<< HEAD
           variant="danger"
           className="mt-5"
         >
           Delete habit
         </Buttons>
+=======
+          className="text-red-400 text-sm hover:text-red-600 mt-5"
+        >
+          Delete habit
+        </button>
+>>>>>>> f3bb5424556da45db3eebf8bfe467a4c7e8dec56
       </div>
     </div>
   );
